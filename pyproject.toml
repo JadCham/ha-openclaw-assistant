@@ -1,0 +1,32 @@
+[tool.ruff]
+# The source is written to be py313-compatible for readability/portability
+# (avoids e.g. PEP 758 parenthesis-less except). The *runtime* is Python 3.14
+# (required by Home Assistant 2026.6) and is what CI executes the tests on.
+target-version = "py313"
+line-length = 88
+
+[tool.ruff.lint]
+select = [
+  "E",     # pycodestyle errors
+  "W",     # pycodestyle warnings
+  "F",     # pyflakes
+  "I",     # isort
+  "UP",    # pyupgrade
+  "B",     # flake8-bugbear
+  "C4",    # flake8-comprehensions
+  "SIM",   # flake8-simplify
+  "ASYNC", # flake8-async
+  "T20",   # flake8-print
+  "RUF",   # ruff-specific
+]
+ignore = [
+  "RUF012", # mutable class attrs (HA entity pattern uses them)
+]
+
+[tool.ruff.lint.isort]
+force-sort-within-sections = true
+combine-as-imports = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

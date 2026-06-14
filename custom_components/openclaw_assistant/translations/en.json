@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to OpenClaw",
+        "description": "Set up OpenClaw as a Home Assistant Assist conversation agent.",
+        "data": {
+          "base_url": "Base URL",
+          "api_key": "API key or token",
+          "model": "Model or agent identifier",
+          "system_prompt": "System prompt",
+          "timeout": "Request timeout",
+          "verify_tls": "Verify TLS certificate",
+          "verify_connection": "Test the connection now"
+        },
+        "data_description": {
+          "base_url": "The OpenClaw OpenAI-compatible endpoint, including scheme, host and port.",
+          "api_key": "Optional. Sent as a bearer token. Leave blank if OpenClaw is unauthenticated.",
+          "model": "The model or agent OpenClaw should use, for example ha-voice.",
+          "system_prompt": "Optional instructions prepended to every conversation.",
+          "timeout": "Seconds to wait for OpenClaw (inactivity timeout while streaming).",
+          "verify_tls": "Disable only for self-signed certificates on trusted networks.",
+          "verify_connection": "Send a tiny request to confirm the URL and token before saving."
+        }
+      },
+      "reconfigure": {
+        "title": "Reconfigure OpenClaw",
+        "description": "Update the OpenClaw connection details.",
+        "data": {
+          "base_url": "Base URL",
+          "api_key": "API key or token",
+          "model": "Model or agent identifier",
+          "system_prompt": "System prompt",
+          "timeout": "Request timeout",
+          "verify_tls": "Verify TLS certificate",
+          "verify_connection": "Test the connection now"
+        },
+        "data_description": {
+          "base_url": "The OpenClaw OpenAI-compatible endpoint, including scheme, host and port.",
+          "api_key": "Optional. Sent as a bearer token. Leave blank if OpenClaw is unauthenticated.",
+          "model": "The model or agent OpenClaw should use, for example ha-voice.",
+          "system_prompt": "Optional instructions prepended to every conversation.",
+          "timeout": "Seconds to wait for OpenClaw (inactivity timeout while streaming).",
+          "verify_tls": "Disable only for self-signed certificates on trusted networks.",
+          "verify_connection": "Send a tiny request to confirm the URL and token before saving."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to OpenClaw. Check the base URL and that OpenClaw is running.",
+      "invalid_auth": "OpenClaw rejected the API key or token.",
+      "timeout_connect": "Timed out while contacting OpenClaw.",
+      "unknown": "An unexpected error occurred."
+    },
+    "abort": {
+      "reconfigure_successful": "OpenClaw was reconfigured successfully."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "OpenClaw options",
+        "description": "Tune how this OpenClaw agent behaves. Saving reloads the integration.",
+        "data": {
+          "model": "Model or agent identifier",
+          "system_prompt": "System prompt",
+          "timeout": "Request timeout",
+          "verify_tls": "Verify TLS certificate",
+          "verify_connection": "Test the connection now"
+        },
+        "data_description": {
+          "model": "The model or agent OpenClaw should use, for example ha-voice.",
+          "system_prompt": "Optional instructions prepended to every conversation. Clear to remove.",
+          "timeout": "Seconds to wait for OpenClaw (inactivity timeout while streaming).",
+          "verify_tls": "Disable only for self-signed certificates on trusted networks.",
+          "verify_connection": "Send a tiny request to confirm the settings before saving."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to OpenClaw. Check the base URL and that OpenClaw is running.",
+      "invalid_auth": "OpenClaw rejected the API key or token.",
+      "timeout_connect": "Timed out while contacting OpenClaw.",
+      "unknown": "An unexpected error occurred."
+    }
+  }
+}
